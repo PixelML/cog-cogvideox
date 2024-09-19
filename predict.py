@@ -42,6 +42,7 @@ class Predictor(BasePredictor):
     ) -> Path:
         print(subprocess.check_output(["nvidia-smi"]).decode("utf-8"))
 
+        image = load_image(image)
         video = self.pipe(
             prompt=prompt,
             image=image,
