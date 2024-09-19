@@ -38,11 +38,11 @@ class Predictor(BasePredictor):
 
     def predict(self,
         prompt: str = Input(description="Prompt"),
-        image: Path = Input(description="Image"),
+        image: str = Input(description="Image"),
     ) -> Path:
         print(subprocess.check_output(["nvidia-smi"]).decode("utf-8"))
 
-        image = load_image(image)
+        image = load_image(image=image)
         video = self.pipe(
             prompt=prompt,
             image=image,
