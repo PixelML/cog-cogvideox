@@ -32,9 +32,9 @@ class Predictor(BasePredictor):
             torch_dtype=torch.bfloat16
         )
 
-        self.pipe.enable_sequential_cpu_offload()
-        self.pipe.vae.enable_tiling()
-        self.pipe.vae.enable_slicing() 
+        # self.pipe.enable_sequential_cpu_offload()
+        # self.pipe.vae.enable_tiling()
+        # self.pipe.vae.enable_slicing() 
 
     def predict(self,
         prompt: str = Input(description="Prompt"),
